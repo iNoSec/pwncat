@@ -132,9 +132,9 @@
    </td>
   </tr>
  </tbody>
-<table>
+</table>
 
-> <sup>[1] <a href="https://cytopia.github.io/pwncat/pwncat.type.html">mypy type coverage</a> <strong>(fully typed: 93.52%)</strong></sup><br/>
+> <sup>[1] <a href="https://cytopia.github.io/pwncat/pwncat.type.html">mypy type coverage</a> <strong>(fully typed: 93.56%)</strong></sup><br/>
 > <sup>[2] Linux builds are currently only failing, due to loss of IPv6 support: <a href="https://github.com/actions/virtual-environments/issues/929">Issue</a></sup><br/>
 > <sup>[3] Windows builds are currently only failing, because they are simply stuck on GitHub actions: <a href="https://github.com/actions/virtual-environments/issues/917">Issue</a></sup>
 
@@ -464,6 +464,15 @@ optional arguments:
                         CR on MacOS).
 
   -n, --nodns           Do not resolve DNS.
+
+  --send-on-eof         Buffer data received on stdin until EOF and send
+                        everything in one chunk.
+
+  --no-shutdown         Do not shutdown into half-duplex mode.
+                        If this option is passed, pwncat won't invoke shutdown
+                        on a socket after seeing EOF on stdin. This is provided
+                        for backward-compatibility with OpenBSD netcat, which
+                        exhibits this behavior.
 
   -v, --verbose         Be verbose and print info to stderr. Use -v, -vv, -vvv
                         or -vvvv for more verbosity. The server performance will
